@@ -6,8 +6,8 @@ import PrimaryButton from '../../Shared/PrimaryButton/PrimaryButton';
 
 const DentalCare = () => {
     return (
-        <div className='grid grid-cols-8 gap-0 my-40'>
-            <div className='col-start-2 col-span-6 '>
+        <div className='grid grid-cols-1 lg:grid-cols-8 gap-0 my-40'>
+            <div className='lg:col-start-2 lg:col-span-6 col-start-1'>
                 <div className="card lg:card-side ">
                     <figure>
                         <img className='rounded-lg	' style={{ width: '450px' }} src={treatment} alt="Treatment" />

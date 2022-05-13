@@ -5,12 +5,12 @@ import Services from '../Services/Services';
 import Appointment from '../Appointment/Appointment';
 import Testimonial from '../Testimonial/Testimonial';
 import ConatctUs from '../ContactUs/ConatctUs';
-import Footer from '../Footer/Footer';
+import Footer from '../../Shared/Footer/Footer';
 
 
 const Home = () => {
     return (
-        <div>
+        <div className='px-12'>
             <Banner></Banner>
             <Information></Information>
             <Services></Services>
