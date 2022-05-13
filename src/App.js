@@ -7,14 +7,13 @@ import SignUp from './Pages/Login/SignUp/SignUp';
 import Appointment from './Pages/Private//Appointment/Appointment';
 import Header from './Pages/Shared/Header/Header';
 
+
 function App() {
   return (
     <div className="px-12">
       <Header></Header>
 
-
       {/* Routes */}
-
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
@@ -23,6 +22,7 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
       </Routes>
+
     </div>
   );
 }

@@ -8,7 +8,7 @@ const DentalCare = () => {
     return (
         <div className='grid grid-cols-8 gap-0 my-40'>
             <div className='col-start-2 col-span-6 '>
-                <div className="card lg:card-side hidden lg:block">
+                <div className="card lg:card-side ">
                     <figure>
                         <img className='rounded-lg	' style={{ width: '450px' }} src={treatment} alt="Treatment" />
                     </figure>
