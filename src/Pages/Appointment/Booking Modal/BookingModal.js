@@ -22,7 +22,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
                 <div className="modal-box">
                     <label for="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
-                    <h3 className="font-bold text-lg mb-5 text-center">Booking for: {name}</h3>
+                    <h3 className="font-semibold text-xl mb-5 text-center text-secondary">Booking for: {name}</h3>
 
 
                     {/* MODAL FORM  */}

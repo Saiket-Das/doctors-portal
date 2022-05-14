@@ -1,7 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import auth from '../../../firebase.init';
+
+
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+
+    const logout = () => {
+        signOut(auth);
+    };
 
     const menuItems = <>
         <li><Link to='/home'>Home</Link></li>
@@ -9,7 +19,18 @@ const Header = () => {
         <li><Link to='/appointment'>Appoinment</Link></li>
         <li><Link to='/review'>Review</Link></li>
         <li><Link to='/contact'>Contact us</Link></li>
-        <li><Link to='/login'>Login</Link></li>
+        {
+            user
+                ?
+                <button className="btn btn-ghost"
+                    onClick={logout}>
+                    Sign out
+                </button>
+                :
+                <li>
+                    <Link to='/login'>Login</Link>
+                </li>
+        }
     </>
 
     return (
