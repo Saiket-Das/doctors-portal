@@ -16,7 +16,6 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
     const handleBookig = event => {
         event.preventDefault();
         const slot = event.target.slot.value;
-        console.log(_id, name, slot)
 
         const booking = {
             treatmentId: _id,
@@ -30,6 +29,8 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
 
         // Booking data post in DATABASE 
         fetch('http://localhost:5000/booking', {
+
+            // https://nameless-headland-38045.herokuapp.com/booking
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -39,7 +40,8 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
-                    toast(`Appointment is set, ${formatDate} at ${slot}`)
+                    toast(`Appointment is set on ${formatDate} at ${slot}
+                    `)
                 }
                 else {
                     toast.error(`You already have an appointment on ${data.booking?.date} at  ${data.booking?.slot}`)

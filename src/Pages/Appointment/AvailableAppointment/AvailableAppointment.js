@@ -16,12 +16,12 @@ const AvailableAppointment = ({ date }) => {
     // use React Query to fetch api 
     // Refetch use to update data in UI realtime after booking (don't need reload) 
     const { data: services, isLoading, refetch } = useQuery(['available', formatDate], () =>
-        fetch(`http://localhost:5000/available?date=${formatDate}`)
+        fetch(`https://nameless-headland-38045.herokuapp.com/available?date=${formatDate}`)
             .then(res => res.json())
     )
 
     // useEffect(() => {
-    //     fetch(`http://localhost:5000/available?date=${formatDate}`)
+    //     fetch(`https://nameless-headland-38045.herokuapp.com/available?date=${formatDate}`)
     //         .then(res => res.json())
     //         .then(data => setServices(data))
     // }, [formatDate])

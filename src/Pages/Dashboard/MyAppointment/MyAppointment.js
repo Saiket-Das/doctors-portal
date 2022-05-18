@@ -12,7 +12,7 @@ const MyAppointment = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/booking?patientEmail=${user.email}`, {
+            fetch(`https://nameless-headland-38045.herokuapp.com/booking?patientEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
