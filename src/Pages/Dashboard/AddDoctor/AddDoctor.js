@@ -12,7 +12,7 @@ const AddDoctor = () => {
 
 
     const { data: services, isLoading } = useQuery('services', () =>
-        fetch('http://localhost:5000/services')
+        fetch('https://nameless-headland-38045.herokuapp.com/services')
             .then(res => res.json())
     )
 
@@ -40,7 +40,7 @@ const AddDoctor = () => {
                     }
 
                     // SENDING DOCTOR DATA TO MY DATABASE 
-                    fetch('http://localhost:5000/doctor', {
+                    fetch('https://nameless-headland-38045.herokuapp.com/doctor', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

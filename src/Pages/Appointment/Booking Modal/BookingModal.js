@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 
 const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
     const [user] = useAuthState(auth);
-    const { _id, name, slots } = treatment;
+    const { _id, name, slots, price } = treatment;
 
     const formatDate = format(date, 'PP');
 
@@ -22,13 +22,14 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
             treatment: name,
             date: formatDate,
             slot: slot,
+            price: price,
             patientEmail: user.email,
             patientName: user.displayName,
             phone: event.target.phone.value
         }
 
         // Booking data post in DATABASE 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://nameless-headland-38045.herokuapp.com/booking', {
 
             // https://nameless-headland-38045.herokuapp.com/booking
             method: 'POST',
