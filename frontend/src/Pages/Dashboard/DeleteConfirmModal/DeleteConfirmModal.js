@@ -31,7 +31,7 @@ const DeleteConfirmModal = ({ deleteingDoctor, refetch, setDeleteingDoctor }) =>
             <input type="checkbox" id="delete-confirm-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box">
-                    <h3 className="font-bold text-lg text-red-600">Are you sure?</h3>
+                    <h3 className="font-bold text-lg text-red-500">Are you sure?</h3>
                     <p className="py-4">You want delete {name}. If you delete once, it will be delete permanently.</p>
                     <div className="modal-action ">
                         <label

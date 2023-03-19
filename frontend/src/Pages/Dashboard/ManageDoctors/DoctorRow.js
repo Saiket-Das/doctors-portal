@@ -30,8 +30,6 @@ const DoctorRow = ({ doctor, index, refetch, setDeleteingDoctor }) => {
                     htmlFor="delete-confirm-modal"
                     className="btn btn-outline btn-error btn-sm">Delete
                 </label>
-
-
             </td>
         </tr>
     );

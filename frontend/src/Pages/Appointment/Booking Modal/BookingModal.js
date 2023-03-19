@@ -30,8 +30,6 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
 
         // Booking data post in DATABASE 
         fetch('https://nameless-headland-38045.herokuapp.com/booking', {
-
-            // https://nameless-headland-38045.herokuapp.com/booking
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

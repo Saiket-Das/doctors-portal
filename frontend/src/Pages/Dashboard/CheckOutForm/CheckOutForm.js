@@ -106,6 +106,10 @@ const CheckOutForm = ({ appointment }) => {
         }
     }
 
+    // if (processing) {
+    //     return <Loading></Loading>
+    // }
+
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -128,7 +132,7 @@ const CheckOutForm = ({ appointment }) => {
                 <button
                     className='btn btn-outline btn-success btn-sm mt-4'
                     type="submit"
-                    disabled={!stripe || !clientSecret}>
+                    disabled={!stripe || !clientSecret || cardSuccess}>
                     Pay
                 </button>
             </form>
