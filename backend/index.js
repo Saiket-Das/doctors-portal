@@ -20,4 +20,5 @@ app.get("/", (req, res) => {
 
 app.listen(port, function () {
   console.log(`Doctor's Portal is running on ${port}`.yellow.bold);
+  console.log("------------- x -------------");
 });
