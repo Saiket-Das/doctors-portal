@@ -1,13 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-// router.route("/").get(usersControllers.getUsers);
+const usersControllers = require("../controllers/user.controllers");
 
-// router.route("/:email").put(usersControllers.createUser);
-
-// router
-//   .route("/admin/:email")
-//   .get(usersControllers.getAdmin)
-//   .patch(usersControllers.createAdmin);
+router.route("/").get(usersControllers.getUsers);
 
 module.exports = router;
