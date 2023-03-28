@@ -10,7 +10,7 @@ exports.getServices = async (req, res) => {
   } catch (error) {
     res.status(400).send({
       success: false,
-      message: "What the issue wrong",
+      message: "Something went wrong",
       error: error.message,
     });
   }
