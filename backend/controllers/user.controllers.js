@@ -1,3 +1,5 @@
+const { getUsersService } = require("../services/user.services");
+
 exports.getUsers = async (req, res) => {
   try {
     const User = await getUsersService();
