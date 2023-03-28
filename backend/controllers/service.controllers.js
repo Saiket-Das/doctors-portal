@@ -1,6 +1,8 @@
+const { getServicessService } = require("../services/service.services");
+
 exports.getServices = async (req, res) => {
   try {
-    //  const User = await getServicessService();
+    const User = await getServicessService();
     res.status(200).json({
       success: true,
       data: User,
