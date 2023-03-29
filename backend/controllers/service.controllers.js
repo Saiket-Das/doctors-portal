@@ -2,10 +2,10 @@ const { getServicessService } = require("../services/service.services");
 
 exports.getServices = async (req, res) => {
   try {
-    const User = await getServicessService();
+    const service = await getServicessService();
     res.status(200).json({
       success: true,
-      data: User,
+      data: service,
     });
   } catch (error) {
     res.status(400).send({
