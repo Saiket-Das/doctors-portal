@@ -58,3 +58,27 @@ exports.getAdmin = async (req, res, next) => {
     });
   }
 };
+
+exports.createAdmin = async (req, res, next) => {
+  try {
+    const admin = await createAdminServic(req.params.email);
+
+    if (!User.upsertedCount) {
+      res.status(400).send({
+        success: false,
+        message: "Can not update",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      admin: admin,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      message: "Something went wrong",
+      error: error.message,
+    });
+  }
+};
