@@ -1,6 +1,7 @@
 const {
   getUsersService,
   createUserService,
+  getAdminService,
 } = require("../services/user.services");
 
 exports.getUsers = async (req, res) => {
@@ -32,6 +33,22 @@ exports.createUser = async (req, res, next) => {
       success: true,
       message: "Data inserted",
       data: User,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      message: "Something went wrong",
+      error: error.message,
+    });
+  }
+};
+
+exports.getAdmin = async (req, res, next) => {
+  try {
+    const admin = await getAdminService(req.params.email);
+    res.status(200).json({
+      success: true,
+      admin: admin,
     });
   } catch (error) {
     res.status(400).send({

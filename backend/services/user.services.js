@@ -20,3 +20,10 @@ exports.createUserService = async (paramEmail, userDetails) => {
 
   return result;
 };
+
+exports.getAdminService = async (paramEmail) => {
+  const filter = { email: paramEmail };
+  const user = await User.findOne(filter);
+  const isAdmin = user.role === "admin";
+  return { isAdmin, user };
+};
