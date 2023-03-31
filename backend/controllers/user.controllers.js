@@ -2,6 +2,7 @@ const {
   getUsersService,
   createUserService,
   getAdminService,
+  createAdminService,
 } = require("../services/user.services");
 
 exports.getUsers = async (req, res) => {
@@ -61,7 +62,7 @@ exports.getAdmin = async (req, res, next) => {
 
 exports.createAdmin = async (req, res, next) => {
   try {
-    const admin = await createAdminServic(req.params.email);
+    const admin = await createAdminService(req.params.email);
 
     if (!User.upsertedCount) {
       res.status(400).send({

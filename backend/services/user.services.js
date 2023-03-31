@@ -27,3 +27,13 @@ exports.getAdminService = async (paramEmail) => {
   const isAdmin = user.role === "admin";
   return { isAdmin, user };
 };
+
+exports.createAdminService = async (paramEmail) => {
+  const filter = { email: paramEmail };
+  console.log(filter);
+  const updateDoc = {
+    $set: { role: "admin" },
+  };
+  const result = await User.updateOne(filter, updateDoc);
+  return result;
+};
